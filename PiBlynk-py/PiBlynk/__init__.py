@@ -602,6 +602,7 @@ class Blynk:
             raise ValueError("pin value must be an integer value")
             
     def gpio_auto(self, pull = None):
+
         import gpiozero as GPIO
         
         def gpioRead_h(pin, gpioObj):  
@@ -612,12 +613,16 @@ class Blynk:
             gpioObj.value = val
 
         def setup_cb(pin,mode):
+            #print("pin=%d,status=%d" %(pin,)
             # do gpio setup 
             if mode == "out":
-                led = GPIO.LED(pin)
-                self.add_digital_hw_pin(pin, None, gpioOut_h, led)
-                logging.getLogger().debug(str(pin)+ str(mode))
+                try:
+                    led = GPIO.LED(pin)
+                    self.add_digital_hw_pin(pin, None, gpioOut_h, led)
+                    logging.getLogger().debug(str(pin)+ str(mode))
                 
+                except:
+                    pass
             if mode == "in":
                 print(pull)
                 if pull=="up":
