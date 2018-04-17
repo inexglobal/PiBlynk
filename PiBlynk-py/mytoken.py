@@ -1,4 +1,4 @@
-token  = '-=-=-=--=-=-=-='   
+token  = 'b128d4cab87--token--7e52ba505727b2'   
 
 token2 = '--------------------------'  
 token3 = 'something else' 

@@ -15,7 +15,7 @@ def timeNow():
 # NOTE: this crashes if oled library or oled hardware display not found !!!
 
 from  oled96 import oled 
-oled.yell(" Hello")
+oled.yell2(" Hello")
 
 def jlog(val, pin, st):
     oled.jnl(val[0])
