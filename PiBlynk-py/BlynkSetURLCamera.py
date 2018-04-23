@@ -32,8 +32,8 @@ def geturl_ngrok():
 		ip=ip.split(' ')
 		ipLAN = ip[0]
 		ipWiFi = ip[1]
-		#return "http://%s:8000" % ipLAN #Connect it with LAN.
-		return "http://%s:8000" % ipWiFi #Connect it with Wi-Fi.
+		return "http://%s:8000" % ipLAN #Connect it with LAN.
+		#return "http://%s:8000" % ipWiFi #Connect it with Wi-Fi.
 def _funCb(ACT):
 	url = "%s/stream.mjpg" % geturl_ngrok()
 	print(url)
